@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CS ADHD</title>
+  </head>
+  <body>
+    <h1>Questions</h1>
+
+    <h3>
+      1- Why cant MACOS and its native applications run on a Windows machine?
+      Why cant we develop MACOS applications on Windows?
+    </h3>
+
+    <div>Answer:</div>
+
+    <h3>2- How does a virtual machine work and run an OS under another OS?</h3>
+
+    <div>Answer:</div>
+    <h3>
+      3- Why do we need to recompile C to run on MACOS or Windows? Arent they
+      both x86 so we can only compile it once and statically include every need
+      the executable needs?
+    </h3>
+
+    <div>Answer:</div>
+    <h3>4- How does Rosetta 2 work? (Or any dynamic binary translator)</h3>
+
+    <div>Answer:</div>
+    <h3>5- How does a computer work under the hood?</h3>
+
+    <div>
+      Answer: This is a lenghty question, what I want to answer is what is the
+      process of CPU executing instructions. When you run an executable, or a
+      program that runs constatly on a while(1) loop like a web server that is
+      listening. From your hard disk, instructions are loaded into the RAM for
+      example LDA 14 might mean "Load register A with the value at memory
+      location 14" might be represented as 00011110 the first 4 bits
+      representing the instruction and the last 4 as the argument. These
+      instructions are called "opcodes" and there are rules on how to write them
+      defined by the Instruction Set Architecture (ISA) like x86 or ARM. Then
+      the opcode will be moved from RAM to the instruction register (the
+      register that holds the opcode that is about to be executed) Afterwards
+      the cpu clock cycle will "fetch -> decode -> execute" this instruction
+      from RAM. The control unit (CU) will look at the opcode and break it down
+      into pieces to tell the CPU how to execute this opcode (btw CU is a part
+      of CPU, not seperate). CU can be hardwired or microprogrammed using an
+      EEPROM (check out question #6). A CPU doesnt "think" it looks at the
+      instruction and with the help of logic gates (transistors) it carries out
+      one instruction at a time. Whether that is adding 2 + 2 together with the
+      help of the ALU, or move the content of a register to another register.
+      The CU ,depending on the opcode, will send the data to different parts of
+      the CPU through the databus in order to be executed. These "actions" can
+      be called "microcode" as this is a level deeper than machine code and
+      tells the CPU what to do IN ORDER TO execute the machine code (assembly)
+    </div>
+
+    <h3>6- How does an EEPROM work?</h3>
+
+    <div>
+      Answer: Normally when you build a computer you can make it all from logic
+      gates (integrated circuits like 74ls08) using
+      <a href="https://www.youtube.com/watch?v=7zffjsXqATg"
+        >combinational logic</a
+      >. But instead of that we can use a EEPROM (Electrically eraseable
+      programmable read only memory) to "program" the logic into it. A ROM is a
+      non-volatile way to store bits in memory (unlike RAM). With an EEPROM you
+      can specify where in the ROM you want to write 8 bits when you use the
+      Write Enable and then later you can read off that using Read Enable to see
+      what instructions are in that memory cell. An EEPROM is perfect to use to
+      microcode programs that wont be changed often. An OS and the BIOS code can
+      be written in the ROM.
+    </div>
+    <h3>6- What does it mean to "program" a CPU?</h3>
+
+    <div>Answer:</div>
+
+    <h3>7- What is firmware?</h3>
+
+    <div>
+      Answer: The origin of the word firmware is a mid-point between hardware
+      and software - software embedded on hardware. It refers to software that
+      it is stored in non-volatile memory (such as ROM, EEPROM or Flash memory)
+      on a hardware device, and is used by the device itself.
+      <a
+        href="https://superuser.com/questions/1283788/what-exactly-is-microcode-and-how-does-it-differ-from-firmware"
+        >src</a
+      >
+    </div>
+
+    <h3>8- How are logic gates made from transistors?</h3>
+
+    <div>Answer:</div>
+
+    <h3>9- How are memory cells made in RAM and ROM from transistors?</h3>
+
+    <div>Answer:</div>
+  </body>
+</html>
